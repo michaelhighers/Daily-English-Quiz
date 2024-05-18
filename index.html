@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESL Lesson 1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lesson 1</h1>
+        <h2>Present Continuous for Future Plans</h2>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/gzsXG5KXepI" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="questions">
+            <h2>Choose the best answer.</h2><br>
+            <form id="quiz-form">
+                <div class="question">
+                    <p>1. Maria _____ to France next week.</p>
+                    <label><input type="radio" name="q1" value="a"> A. will going</label><br>
+                    <label><input type="radio" name="q1" value="b"> B. is going</label><br>
+                    <label><input type="radio" name="q1" value="c"> C. are going</label><br><br>
+                </div>
+                <div class="question">
+                    <p>2. What _____ you doing tomorrow night?</p>
+                    <label><input type="radio" name="q2" value="a"> A. are</label><br>
+                    <label><input type="radio" name="q2" value="b"> B. will</label><br>
+                    <label><input type="radio" name="q2" value="c"> C. is</label><br><br>
+                </div>
+                <div class="question">
+                    <p>3. We _____ not doing this again!</p>
+                    <label><input type="radio" name="q3" value="a"> A. will</label><br>
+                    <label><input type="radio" name="q3" value="b"> B. are</label><br>
+                    <label><input type="radio" name="q3" value="c"> C. is</label><br><br>
+                </div>
+                <button type="button" onclick="calculateScore()">Submit</button>
+            </form>
+            <div id="result"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
