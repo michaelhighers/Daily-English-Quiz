@@ -29,7 +29,12 @@ h1 {
 }
 
 @media (max-width: 800px) {
-    background-color: #4c7794;
+    body {
+        background-color: #4c7794;
+    }
+    .container {
+        box-shadow: none;
+    }
 }
 
 .container h2 {
