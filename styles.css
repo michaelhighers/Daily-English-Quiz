@@ -18,14 +18,15 @@ h1 {
     padding-bottom: 8px;
 }
 
-/* Container styles */
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: #4c7794;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+/* Adjust container styles for smaller screens */
+@media (max-width: 768px) {
+    body {
+        background-color: #4c7794;
+    }
+    
+    .container {
+        box-shadow: none; /* Remove box shadow for a cleaner look */
+    }
 }
 
 /* Adjust container styles for smaller screens */
