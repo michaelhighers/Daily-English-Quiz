@@ -28,17 +28,6 @@ h1 {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Adjust container styles for smaller screens */
-@media (max-width: 768px) {
-    body {
-        background-color: #4c7794;
-    }
-    
-    .container {
-        box-shadow: none; /* Remove box shadow for a cleaner look */
-    }
-}
-
 .container h2 {
     color: #ffffff;
     font-size: 1.4rem;
