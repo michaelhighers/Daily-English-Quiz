@@ -1,5 +1,9 @@
 body {
     font-family: Arial, sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-color: hsl(240, 9%, 93%);
     color: #333;
     margin: 0;
@@ -7,9 +11,8 @@ body {
 }
 
 h1 {
-    color: #333;
+    color: #ffffff;
     text-align: center;
-    background-color: hwb(233 72% 22%);
     border-radius: 8px;
     padding-top: 8px;
     padding-bottom: 8px;
@@ -19,13 +22,14 @@ h1 {
 .container {
     max-width: 800px;
     margin: 0 auto;
-    background-color: #fff;
+    background-color: #4c7794;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .container h2 {
+    color: #ffffff;
     font-size: 1.4rem;
     text-align: center;
     padding-bottom: 5px;
@@ -35,7 +39,6 @@ h1 {
 /* Questions container styles */
 .questions {
     max-width: 100%;
-    background-color: hwb(233 72% 22%);
     padding: 20px;
     border-radius: 8px;
 }
@@ -60,9 +63,13 @@ h1 {
 }
 
 .questions h2 {
-    color: #333;
+    color: #ffffff;
     font-size: 1.4rem;
     margin-bottom: 10px;
+}
+
+.question p {
+    color: #ffffff;
 }
 
 input[type="radio"] {
@@ -73,7 +80,7 @@ input[type="radio"] {
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    border: 2px solid #263238; /* Midnight Blue */
+    border: 2px solid #ffffff;
     margin-right: 5px;
     position: relative;
     top: 4px;
@@ -86,10 +93,14 @@ input[type="radio"]:checked::before {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: #263238; /* Midnight Blue */
+    background-color: #ffffff;
     position: relative;
     top: 1px; /* Adjusted for centering */
     left: 1px; /* Adjusted for centering */
+}
+
+label {
+    color: #ffffff;
 }
 
 .question p {
@@ -97,7 +108,7 @@ input[type="radio"]:checked::before {
 }
 
 button {
-    background-color: hsl(216, 23%, 38%);
+    background-color: #263c4a;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -106,10 +117,13 @@ button {
 }
 
 button:hover {
-    background-color: rgb(37, 37, 39);
+    background-color: #8eafc5;
+    color: #333;
 }
 
 #result {
     margin-top: 20px;
+    color: #ffffff;
     font-weight: bold;
 }
+
