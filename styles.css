@@ -94,7 +94,7 @@ html, body {
 
 .quizzes {
     display: block;
-    margin: 5px auto;
+    margin: 50px auto;
     max-width: 350px;
     margin: auto; /* Center the container horizontally */
     padding: 20px;
