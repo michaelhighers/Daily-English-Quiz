@@ -93,7 +93,9 @@ html, body {
 }
 
 .quizzes {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     max-width: 350px;
     padding: 20px;
     margin: auto;
