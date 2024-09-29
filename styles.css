@@ -96,12 +96,12 @@ html, body {
     display: block;
     max-width: 350px;
     padding: 20px;
+    margin: auto;
 }
 
 #todaysquiz, #pastquizzes {
     width: 200px;
     height: 100px;
-    margin: 50px auto;
     color: #000000;
     background-color: #ffffff;
     opacity: 0.75;
