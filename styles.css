@@ -87,14 +87,13 @@ html, body {
 
 .container h2 {
     color: #ffffff;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     text-align: center;
     padding-bottom: 5px;
 }
 
 .quizzes {
     display: block;
-    margin: 50px auto;
     max-width: 350px;
     margin: auto; /* Center the container horizontally */
     padding: 20px;
