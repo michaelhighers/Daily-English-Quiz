@@ -145,7 +145,7 @@ button.take-quiz:hover {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 90%;
+    width: 95%;
     background-color: #3b3b3b;
     border-radius: 10px;
     padding: 20px;
@@ -155,8 +155,7 @@ button.take-quiz:hover {
     max-width: 700px;
     width: 250px;
     height: 375px;
-    padding: 20px;
-    margin-bottom: 30px;
+    display: flex;
     text-align: center;
     background: #e7e7e7;
     border-radius: 10px;
@@ -243,12 +242,13 @@ button:hover {
     }
 
     .landing-container {
-        width: 80%; /* Gives more space on smaller screens */
+        width: 95%; /* Gives more space on smaller screens */
+        height: 95%;
     }
 
     .quiz-page-container {
-        width: 80%;
-        padding: 10px;
+        width: 95%;
+        height: 95%;
     }
 }
 
