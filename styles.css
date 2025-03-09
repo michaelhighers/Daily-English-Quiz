@@ -80,15 +80,26 @@ html, body {
 .quiz-card h2 {
     color: #3b3b3b;
     align-self: flex-start; /* Aligns h2 to the start (top) */
-    margin-top: 0; /* Removes any default top margin */
+    margin-top: 0;
+    margin-bottom: 5px;
     text-align: center;
     width: 100%;
 }
 
 .quiz-card p {
+    margin-top: 0px;
     font-size: 1rem;
     color: #3b3b3b;
 }
+
+.card-image {
+    width: 100%; /* Makes the image fit the card width */
+    height: auto; /* Ensures the image retains its aspect ratio */
+    margin: 10px 0; /* Adds space between the image and the text */
+    max-height: 150px; /* Limits the maximum height of the image */
+    object-fit: contain; /* Ensures the image fits inside the allocated space */
+}
+
 
 button.take-quiz {
     width: 100%;
