@@ -5,7 +5,7 @@ html, body {
     width: 100%;
     height: 100%;
     font-family: Arial, sans-serif;
-    background-color: #4c7794;
+    background-color: #3b3b3b;
     color: #333;
     display: flex;
     justify-content: center;
@@ -24,6 +24,7 @@ html, body {
     aspect-ratio: auto;
     height: 175px;
     margin-bottom: 1rem;
+    border-radius: 8px;
 }
 
 .landing-container {
@@ -31,54 +32,82 @@ html, body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 80%;
+    width: 100%;
     padding: 20px; /* Added padding to avoid content being too close to the screen edges */
-    max-width: 900px; /* Adjusted max-width for medium screens */
 }
 
 .quiz-card {
-    background: white;
-    padding: 20px;
+    width: 250px;
+    height: 375px;
     border-radius: 10px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-    margin-bottom: auto;
-    height: 400px;
+    padding: 20px;
+    display: flex;
+    flex: 0 0 250px; /* Keeps each card's width fixed */
+    flex-direction: column;
+    align-items: center; /* Keeps content centered horizontally */
+    justify-content: flex-start; /* Positions content at the top */
     text-align: center;
     
-    /* Center content vertically */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centers content vertically */
-    align-items: center; /* Centers content horizontally */
+    /* Background settings */
+    position: relative;
+    overflow: hidden;
+    background-image: url('images/maze.jpg');
+    background-size: 200%; /* Enlarges the image to cover the card */
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
+/* Subtle overlay effect */
+.quiz-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 0;
+}
+
+/* Ensures text and content stay above the background */
+.quiz-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+
 .quiz-card h2 {
-    margin: 10px 0;
-    font-size: 1.5rem;
+    color: #3b3b3b;
+    align-self: flex-start; /* Aligns h2 to the start (top) */
+    margin-top: 0; /* Removes any default top margin */
+    text-align: center;
+    width: 100%;
 }
 
 .quiz-card p {
     font-size: 1rem;
-    color: #555;
+    color: #3b3b3b;
 }
 
 button.take-quiz {
     width: 100%;
     padding: 10px;
-    background: #4c7794;
+    background: #6e6e6e;
     color: white;
     border: none;
     border-radius: 5px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-    font-size: 1rem;
+    font-size: 1.2rem;
     cursor: pointer;
+    margin-top: auto; /* Pushes the button to the bottom */
 }
 
 button.take-quiz:hover {
-    background: #141c24;
+    background: #3b3b3b;
+    transform: scale(1.1);
 }
 
-/* ====== Quiz Carousel (Past Quizzes) ====== */
 .quiz-carousel-container {
     width: 100%;
     display: flex;
@@ -90,16 +119,12 @@ button.take-quiz:hover {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scroll-behavior: smooth; /* Enables smooth scrolling */
+    scroll-behavior: smooth;
     gap: 15px;
     width: 100%;
     padding: 20px 0;
 }
 
-.quiz-card {
-    flex: 0 0 250px; /* Fixed width for each card */
-    scroll-snap-align: center; /* Ensures cards snap into place */
-}
 
 /* ====== Quiz Page Styles ====== */
 .quiz-container {
@@ -205,6 +230,7 @@ button:hover {
 
 @media (min-width: 800px) {
     .landing-container {
-        max-width: 1000px; /* Increased max-width for larger screens */
+        max-width: 80%; /* Increased max-width for larger screens */
     }
 }
+
