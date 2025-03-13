@@ -198,6 +198,10 @@ button.take-quiz:hover {
 }
 
 @media (max-width: 600px) {
+    .body {
+        background: #3b3b3b;
+    }
+    
     .quiz-carousel {
         gap: 15px; /* Ensures consistent gap between cards */
     }
