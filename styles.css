@@ -22,7 +22,7 @@ html, body {
 /* ====== Landing Page Styles ====== */
 #logo {
     aspect-ratio: auto;
-    height: 175px;
+    height: 150px;
     margin-bottom: 1rem;
     border-radius: 10px;
 }
@@ -153,77 +153,34 @@ button.take-quiz:hover {
 
 .quiz-container {
     max-width: 700px;
-    width: 275px;
-    height: 400px;
+    width: 75%;
+    max-width: 350px;
+    height: 65%;
+    max-height: 450px;
     display: flex;
     text-align: center;
     align-items: center;
     background: #e7e7e7;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
 .quiz-container h1 {
     margin: auto;
     font-size: 1.5rem;
+    color: #3b3b3b;
 }
 
 .quiz-container p {
     font-size: 1rem;
-    color: #555;
+    color: #3b3b3b;
 }
 
-/* ====== Question Styles ====== */
-.question {
-    margin-bottom: 15px;
-    text-align: left;
-}
 
-.question p {
-    font-size: 1rem;
-    font-weight: bold;
-}
+/* ====== Quiz Q&A and Button Styles ====== */
 
-label {
-    display: block;
-    padding: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    background: #f4f4f4;
-    border-radius: 5px;
-}
 
-input[type="radio"] {
-    margin-right: 10px;
-}
 
-/* ====== Buttons & Results ====== */
-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    background: #4c7794;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-button:hover {
-    background: #141c24;
-}
-
-#quiz-results {
-    display: none;
-    margin-top: 20px;
-}
-
-#quiz-results p {
-    font-size: 1.2rem;
-    font-weight: bold;
-}
 
 /* ====== Mobile Responsiveness ====== */
 
