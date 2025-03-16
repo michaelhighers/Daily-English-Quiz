@@ -1,309 +1,123 @@
-/* ====== Global Styles ====== */
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    font-family: Arial, sans-serif;
-    background-color: #e7e7e7;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box; /* Ensures padding and borders are included in width and height */
-}
+document.addEventListener('DOMContentLoaded', function () {
+    const takeQuizButtons = document.querySelectorAll('.take-quiz');
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box; /* Applies border-box to all elements and pseudo-elements */
-}
+    takeQuizButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const quizUrl = button.getAttribute('data-quiz-url');
+            window.location.href = quizUrl; // Redirect to the unique quiz page
+        });
+    });
+});
 
-/* ====== Landing Page Styles ====== */
-#logo {
-    aspect-ratio: auto;
-    height: 150px;
-    margin-bottom: 1rem;
-    border-radius: 10px;
-}
+document.addEventListener('DOMContentLoaded', function () {
+    const startButton = document.getElementById('start');
+    const nextButton = document.getElementById('next');
+    const scoreButton = document.getElementById('score');
+    const scoreContainer = document.getElementById('score-container');  
+    const scoreResult = document.getElementById('score-result');
+    const shareButton = document.getElementById('share');
+    const questions = document.querySelectorAll('.question');
+    let currentQuestion = 0;
+    let score = 0;
 
-.landing-container {
-    background-color: #3b3b3b;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 90%;
-    border-radius: 10px;
-    padding: 20px;
-}
-
-.quiz-card {
-    width: 250px;
-    height: 375px;
-    border-radius: 10px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    display: flex;
-    flex: 0 0 250px; /* Keeps each card's width fixed */
-    flex-direction: column;
-    align-items: center; /* Keeps content centered horizontally */
-    justify-content: flex-start; /* Positions content at the top */
-    text-align: center;
+    // Hide all questions initially
+    questions.forEach(question => question.style.display = 'none');
     
-    /* Background settings */
-    position: relative;
-    overflow: hidden;
-    background-image: url('images/maze.jpg');
-    background-size: 200%; /* Enlarges the image to cover the card */
-    background-position: center;
-    background-repeat: no-repeat;
-}
+    // When the start button is clicked, start the quiz
+    startButton.addEventListener('click', function () {
+        startButton.style.display = 'none'; // Hide the start button
+        showQuestion(currentQuestion); // Show the first question
+    });
 
-/* Subtle overlay effect */
-.quiz-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    z-index: 0;
-}
+    // When the next button is clicked, move to the next question
+    nextButton.addEventListener('click', function () {
+        currentQuestion++;
+        if (currentQuestion < questions.length) {
+            showQuestion(currentQuestion); // Show the next question
+        } else {
+            displayScore(); // If all questions are answered, display the score
+        }
+    });
 
-/* Ensures text and content stay above the background */
-.quiz-card > * {
-    position: relative;
-    z-index: 1;
-}
+    // Function to display a specific question based on the index
+    function showQuestion(index) {
+        // Hide all questions
+        questions.forEach(question => question.style.display = 'none');
+        // Show the current question
+        questions[index].style.display = 'block';
 
+        // Add event listeners to answer buttons for this question
+        const answerButtons = questions[index].querySelectorAll('.answer');
+        answerButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                checkAnswer(button, index);
+            });
+        });
 
-.quiz-card h2 {
-    color: #3b3b3b;
-    align-self: flex-start; /* Aligns h2 to the start (top) */
-    margin-top: 0;
-    margin-bottom: 5px;
-    text-align: center;
-    width: 100%;
-}
-
-.quiz-card p {
-    margin-top: 0px;
-    font-size: 1rem;
-    color: #3b3b3b;
-}
-
-.card-image {
-    width: 100%;
-    height: auto;
-    margin: 10px 0;
-    max-height: 150px;
-    object-fit: contain;
-}
-
-button.take-quiz {
-    width: 100%;
-    padding: 10px;
-    background: #6e6e6e;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-    font-size: 1.2rem;
-    cursor: pointer;
-    margin-top: auto; /* Pushes the button to the bottom */
-}
-
-button.take-quiz:hover {
-    background: #3b3b3b;
-    transform: scale(1.1);
-}
-
-.quiz-carousel-container {
-    width: 100%;
-    display: flex;
-    justify-content: center; /* Centers the whole carousel on the page */
-    padding: 0 10px; /* Added padding to prevent the first card from being too close to the edges */
-}
-
-.quiz-carousel {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    gap: 15px;
-    width: 100%;
-    padding: 20px 0;
-}
-
-
-/* ====== Quiz Page Styles ====== */
-
-.quiz-page-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 95%;
-    background-color: #3b3b3b;
-    border-radius: 10px;
-    padding: 20px;
-}
-
-.quiz-container {
-    max-width: 700px;
-    width: 75%;
-    max-width: 350px;
-    height: 65%;
-    max-height: 450px;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    background: #e7e7e7;
-    border-radius: 10px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-    justify-content: center; /* Centers content horizontally */
-}
-
-.quiz-container h1 {
-    margin: auto;
-    font-size: 1.5rem;
-    color: #3b3b3b;
-}
-
-.quiz-container p {
-    font-size: 1rem;
-    color: #3b3b3b;
-}
-
-
-/* ====== Quiz Q&A and Button Styles ====== */
-.question {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    display: none; /* Initially hide all questions */
-    justify-content: center; /* Centers content horizontally */
-}
-
-.question p {
-    font-size: 1.25rem;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-/* Ensure buttons are centered horizontally */
-button {
-    display: block;
-    width: 225px;
-    max-width: 300px; /* Prevents buttons from being too wide on large screens */
-    margin: 10px auto; /* Centers buttons horizontally */
-    padding: 10px;
-    background-color: #6e6e6e;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-}
-
-button:hover {
-    background-color: #3b3b3b;
-    transform: scale(1.05);
-}
-
-button.answer.correct {
-    background-color: #4CAF50; /* Green for correct answer */
-}
-
-button.answer.incorrect {
-    background-color: #F44336; /* Red for incorrect answer */
-}
-
-/* ====== Button Styles ====== */
-button#start {
-    width: 175px;
-    background-color: #4CAF50;
-    font-size: 1.75rem;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-    margin-top: 0; /* Ensure no margin at top */
-    align-self: center; /* Keeps it centered horizontally */
-}
-
-button#start:hover {
-    background-color: #45a049;
-}
-
-button#next, button#score {
-    width: 150px;
-    background-color: #4CAF50;
-    font-size: 1.2rem;
-    display: none; /* Ensure next and score buttons are hidden initially */
-}
-
-button#next:hover, button#score:hover {
-    background-color: #6e6e6e;
-}
-
-
-
-/* ====== Mobile Responsiveness ====== */
-
-@media (min-width: 800px) {
-    .landing-container {
-        width: 80%; /* Increased max-width for larger screens */
-        height: 95%;
+        // Ensure the next button is hidden until an answer is selected
+        nextButton.style.display = 'none';
     }
 
-    .quiz-page-container {
-        width: 80%;
-        height: 95%;
+    // Function to check if the selected answer is correct
+    function checkAnswer(button, questionIndex) {
+        const correctAnswerIndex = questions[questionIndex].dataset.correct;
+        const selectedAnswer = button.dataset.index;
+
+        // Disable all answer buttons after selecting an answer
+        const answerButtons = questions[questionIndex].querySelectorAll('.answer');
+        answerButtons.forEach(btn => btn.disabled = true);
+
+        // Check if the answer is correct
+        if (selectedAnswer === correctAnswerIndex) {
+            button.classList.add('correct');
+            score++; // Increase score for correct answer
+        } else {
+            button.classList.add('incorrect');
+            // Highlight the correct answer
+            const correctButton = questions[questionIndex].querySelector(`[data-index="${correctAnswerIndex}"]`);
+            correctButton.classList.add('correct');
+        }
+
+        // Show the next button after selecting an answer
+        nextButton.style.display = 'block';
+
+        // If it's the last question, show the score button instead of the next button
+        if (currentQuestion === questions.length - 1) {
+            nextButton.style.display = 'none'; 
+            scoreButton.style.display = 'inline-block';
+        }
     }
 
-}
+    // Function to display the score inside the score container
+    function displayScore() {
+        // Hide all questions
+        questions.forEach(question => question.style.display = 'none');
 
-@media (max-width: 600px) {
-    .body {
-        background: #3b3b3b;
-    }
-    
-    .quiz-carousel {
-        gap: 15px; /* Ensures consistent gap between cards */
-    }
-
-    .quiz-carousel-container {
-        justify-content: flex-start; /* Keeps the first card centered */
-        padding: 0 10px; /* Adds padding to avoid the first card being too close to the edge */
+        // Show the score container
+        scoreResult.textContent = `You scored ${score} out of ${questions.length}!`;
+        scoreContainer.style.display = 'block';
+        scoreButton.style.display = 'none';
     }
 
-    .landing-container {
-        width: 95%; /* Gives more space on smaller screens */
-        height: 95%;
-    }
+    // Share the quiz result
+    shareButton.addEventListener('click', function () {
+        if (navigator.share) {
+            navigator.share({
+                title: 'Quiz Results',
+                text: `I scored ${score} out of ${questions.length} on this awesome quiz!`,
+                url: window.location.href 
+            }).then(() => {
+                console.log('Successfully shared');
+            }).catch((error) => {
+                console.error('Error sharing:', error);
+            });
+        } else {
+            alert('Sharing not supported on this device. Please copy the link to share.');
+        }
+    });
 
-    .quiz-page-container {
-        width: 95%;
-        height: 95%;
-    }
-}
-
-@media (min-width: 600px) and (max-width: 800px) {
-
-    .landing-container {
-        width: 95%;
-        height: 95%;
-    }
-
-    .quiz-carousel {
-        gap: 10px; /* Adjusts the gap for medium screens */
-    }
-
-    .quiz-page-container {
-        height: 95%;
-        width: 95%;
-    }
-}
+    // Add event listener to the score button to display the score
+    scoreButton.addEventListener('click', function () {
+        displayScore(); 
+    });
+});
