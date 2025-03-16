@@ -139,6 +139,7 @@ button.take-quiz:hover {
 
 
 /* ====== Quiz Page Styles ====== */
+
 .quiz-page-container {
     display: flex;
     flex-direction: column;
@@ -152,7 +153,7 @@ button.take-quiz:hover {
 
 .quiz-container {
     max-width: 700px;
-    width: 75%;
+    width: 85%;
     max-width: 350px;
     height: 70%;
     max-height: 500px;
