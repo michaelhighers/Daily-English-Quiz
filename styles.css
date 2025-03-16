@@ -154,8 +154,8 @@ button.take-quiz:hover {
     max-width: 700px;
     width: 75%;
     max-width: 350px;
-    height: 65%;
-    max-height: 450px;
+    height: 70%;
+    max-height: 500px;
     display: flex;
     flex-direction: column; /* Changed to column */
     text-align: center;
@@ -164,7 +164,7 @@ button.take-quiz:hover {
     border-radius: 10px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
     justify-content: space-between; /* Distribute space between elements */
-    padding: 20px; /* Added padding to quiz-container */
+    padding: 5px;
 }
 
 .quiz-container h1 {
@@ -180,19 +180,19 @@ button.take-quiz:hover {
 
 /* ====== Quiz Q&A and Button Styles ====== */
 .question {
-    width: 100%; /* Take full width of parent */
     display: flex;
     flex-direction: column;
     align-items: center;
-    display: none;
-    text-align: center; /* Center text within question */
+    display: none; /* Initially hide all questions */
+    justify-content: center; /* Centers content horizontally */
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
 .question p {
     font-size: 1.3rem;
     color: #333;
-    margin-top: 5px;
-    margin-bottom: 20px; /* Reduced margin */
+    margin-bottom: 30px;
     padding-left: 5px;
     padding-right: 5px;
 }
@@ -202,28 +202,6 @@ button.take-quiz:hover {
     flex-direction: column;
     align-items: center;
     width: 100%; /* Take full width */
-}
-
-
-/* ====== Quiz Q&A and Button Styles ====== */
-
-
-.question {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    display: none; /* Initially hide all questions */
-    justify-content: center; /* Centers content horizontally */
-}
-
-.question p {
-    font-size: 1.3rem;
-    color: #333;
-    margin-top: 10px;
-    margin-bottom: 40px;
-    padding-left: 5px;
-    padding-right: 5px;
 }
 
 
@@ -258,8 +236,10 @@ button.answer.incorrect {
 }
 
 .answer-container button.answer {
-    margin-top: 6px;
-    margin-bottom: 6px;
+    height: 55px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 0;
 }
 
 /* ====== Button Styles ====== */
@@ -269,7 +249,7 @@ button#start {
     background-color: #4CAF50;
     font-size: 1.75rem;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-    margin-top: 80%;
+    margin-top: 100%;
     align-self: center; /* Keeps it centered horizontally */
 }
 
@@ -279,6 +259,7 @@ button#start:hover {
 
 button#next, button#score {
     width: 125px;
+    margin-top: 25px;
     background-color: #4CAF50;
     font-size: 1.2rem;
     display: none; /* Ensure next and score buttons are hidden initially */
@@ -289,7 +270,7 @@ button#next:hover, button#score:hover {
 }
 
 #score-container {
-    margin-top: 50%;
+    margin-top: 65%;
 }
 
 #score-container h2 {
