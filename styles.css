@@ -152,10 +152,9 @@ button.take-quiz:hover {
 }
 
 .quiz-container {
-    max-width: 700px;
     width: 85%;
-    max-width: 350px;
     height: 70%;
+    max-width: 400px;
     max-height: 500px;
     display: flex;
     flex-direction: column; /* Changed to column */
