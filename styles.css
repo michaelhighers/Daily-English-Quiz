@@ -163,6 +163,7 @@ button.take-quiz:hover {
     background: #e7e7e7;
     border-radius: 10px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    justify-content: center; /* Centers content horizontally */
 }
 
 .quiz-container h1 {
@@ -178,7 +179,75 @@ button.take-quiz:hover {
 
 
 /* ====== Quiz Q&A and Button Styles ====== */
+.question {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: none; /* Initially hide all questions */
+    justify-content: center; /* Centers content horizontally */
+}
 
+.question p {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Ensure buttons are centered horizontally */
+button {
+    display: block;
+    width: 225px;
+    max-width: 300px; /* Prevents buttons from being too wide on large screens */
+    margin: 10px auto; /* Centers buttons horizontally */
+    padding: 10px;
+    background-color: #6e6e6e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+button:hover {
+    background-color: #3b3b3b;
+    transform: scale(1.05);
+}
+
+button.answer.correct {
+    background-color: #4CAF50; /* Green for correct answer */
+}
+
+button.answer.incorrect {
+    background-color: #F44336; /* Red for incorrect answer */
+}
+
+/* ====== Button Styles ====== */
+button#start {
+    width: 175px;
+    background-color: #4CAF50;
+    font-size: 1.75rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    margin-top: 0; /* Ensure no margin at top */
+    align-self: center; /* Keeps it centered horizontally */
+}
+
+button#start:hover {
+    background-color: #45a049;
+}
+
+button#next, button#score {
+    width: 150px;
+    background-color: #4CAF50;
+    font-size: 1.2rem;
+    display: none; /* Ensure next and score buttons are hidden initially */
+}
+
+button#next:hover, button#score:hover {
+    background-color: #6e6e6e;
+}
 
 
 
@@ -238,6 +307,3 @@ button.take-quiz:hover {
         width: 95%;
     }
 }
-
-
-
