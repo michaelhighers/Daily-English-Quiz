@@ -139,7 +139,6 @@ button.take-quiz:hover {
 
 
 /* ====== Quiz Page Styles ====== */
-
 .quiz-page-container {
     display: flex;
     flex-direction: column;
@@ -158,12 +157,14 @@ button.take-quiz:hover {
     height: 65%;
     max-height: 450px;
     display: flex;
+    flex-direction: column; /* Changed to column */
     text-align: center;
     align-items: center;
     background: #e7e7e7;
     border-radius: 10px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-    justify-content: center; /* Centers content horizontally */
+    justify-content: space-between; /* Distribute space between elements */
+    padding: 20px; /* Added padding to quiz-container */
 }
 
 .quiz-container h1 {
@@ -175,6 +176,32 @@ button.take-quiz:hover {
 .quiz-container p {
     font-size: 1rem;
     color: #3b3b3b;
+}
+
+/* ====== Quiz Q&A and Button Styles ====== */
+.question {
+    width: 100%; /* Take full width of parent */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    text-align: center; /* Center text within question */
+}
+
+.question p {
+    font-size: 1.3rem;
+    color: #333;
+    margin-top: 5px;
+    margin-bottom: 20px; /* Reduced margin */
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.answer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Take full width */
 }
 
 
@@ -193,8 +220,10 @@ button.take-quiz:hover {
 .question p {
     font-size: 1.3rem;
     color: #333;
-    margin-top: 5px;
-    margin-bottom: 50px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 
@@ -208,7 +237,7 @@ button {
     background-color: #6e6e6e;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
@@ -228,13 +257,19 @@ button.answer.incorrect {
     background-color: #F44336; /* Red for incorrect answer */
 }
 
+.answer-container button.answer {
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
 /* ====== Button Styles ====== */
 button#start {
+    height: 80px;
     width: 175px;
     background-color: #4CAF50;
     font-size: 1.75rem;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-    margin-top: 10px;
+    margin-top: 80%;
     align-self: center; /* Keeps it centered horizontally */
 }
 
@@ -253,13 +288,17 @@ button#next:hover, button#score:hover {
     background-color: #6e6e6e;
 }
 
+#score-container {
+    margin-top: 50%;
+}
+
 #score-container h2 {
     margin-bottom: 25px;
 }
 
 #share {
-    width: 200px;
-    height: 50px;
+    width: 175px;
+    height: 80px;
 }
 
 
@@ -307,8 +346,8 @@ button#next:hover, button#score:hover {
 @media (min-width: 600px) and (max-width: 800px) {
 
     .landing-container {
-        width: 95%;
-        height: 95%;
+        width: 90%;
+        height: 90%;
     }
 
     .quiz-carousel {
