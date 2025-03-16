@@ -99,22 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
         scoreButton.style.display = 'none';
     }
 
-    // Share the quiz result
-    shareButton.addEventListener('click', function () {
-        if (navigator.share) {
-            navigator.share({
-                title: 'Quiz Results',
-                text: `I scored ${score} out of ${questions.length} on this awesome quiz!`,
-                url: window.location.href 
-            }).then(() => {
-                console.log('Successfully shared');
-            }).catch((error) => {
-                console.error('Error sharing:', error);
-            });
-        } else {
-            alert('Sharing not supported on this device. Please copy the link to share.');
-        }
-    });
+
 
     // Add event listener to the score button to display the score
     scoreButton.addEventListener('click', function () {
