@@ -9,16 +9,88 @@
 <body>
 
 <div class="quiz-page-container">
-    
+
     <img id="logo" src="images/Daily English Quiz.png" alt="Daily English Quiz Logo with two crossed pencils inside a double circle">
 
-
-
     <div class="quiz-container">
-        <h1>Quiz Content</h1>
+        <div id="quiz-content">
+
+            <!-- Start Button -->
+            <div class="button-container">
+                <button id="start">Start</button>
+            </div>
+
+            <!-- Question and Answer Section -->
+            <div class="question-container">
+                <div class="question" data-correct="2" style="display:none;">
+                    <p>What is the correct plural form of "child"?</p>
+                    <div class="answer-container">
+                        <button class="answer" data-index="1">Childs</button>
+                        <button class="answer" data-index="2">Children</button>
+                        <button class="answer" data-index="3">Childrens</button>
+                        <button class="answer" data-index="4">Childes</button>
+                    </div>
+                </div>
+
+                <div class="question" data-correct="3" style="display:none;">
+                    <p>Which is the correct form of "go" in past tense?</p>
+                    <div class="answer-container">
+                        <button class="answer" data-index="1">Goes</button>
+                        <button class="answer" data-index="2">Going</button>
+                        <button class="answer" data-index="3">Went</button>
+                        <button class="answer" data-index="4">Gone</button>
+                    </div>
+                </div>
+
+                <div class="question" data-correct="1" style="display:none;">
+                    <p>What is the opposite of "happy"?</p>
+                    <div class="answer-container">
+                        <button class="answer" data-index="1">Sad</button>
+                        <button class="answer" data-index="2">Excited</button>
+                        <button class="answer" data-index="3">Joyful</button>
+                        <button class="answer" data-index="4">Angry</button>
+                    </div>
+                </div>
+
+                <div class="question" data-correct="4" style="display:none;">
+                    <p>Which one is a verb?</p>
+                    <div class="answer-container">
+                        <button class="answer" data-index="1">Beautiful</button>
+                        <button class="answer" data-index="2">Quickly</button>
+                        <button class="answer" data-index="3">Mountain</button>
+                        <button class="answer" data-index="4">Run</button>
+                    </div>
+                </div>
+
+                <div class="question" data-correct="2" style="display:none;">
+                    <p>What is the past tense of "eat"?</p>
+                    <div class="answer-container">
+                        <button class="answer" data-index="1">Eats</button>
+                        <button class="answer" data-index="2">Ate</button>
+                        <button class="answer" data-index="3">Eating</button>
+                        <button class="answer" data-index="4">Eaten</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Next and Score Buttons -->
+            <div class="button-wrapper">
+                <button id="next" style="display:none;">Next</button>
+                <button id="score" style="display:none;">Score</button>
+            </div>
+
+            <!-- Score Display -->
+            <div id="score-container" style="display:none;">
+                <h2>Your Score</h2>
+                <p id="score-result"></p> <!-- Leave this empty, it will be updated by JS -->
+                <button id="share">Share this Quiz</button>
+            </div>
+
+        </div>
     </div>
 </div>
 
- 
+<script src="script.js"></script>
+
 </body>
 </html>
