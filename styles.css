@@ -1,15 +1,19 @@
 /* ====== Global Styles ====== */
 html, body {
-    margin: 0;
-    padding: 0;
+    margin: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 10px;
+    padding-right: 10px;
     width: 100%;
     height: 100%;
     font-family: Arial, sans-serif;
-    background-color: #e7e7e7;
+    background-color: #3b3b3b;
     color: #333;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
     box-sizing: border-box; /* Ensures padding and borders are included in width and height */
 }
 
@@ -23,19 +27,8 @@ html, body {
 #logo {
     aspect-ratio: auto;
     height: 150px;
-    margin-bottom: 1rem;
+    margin-bottom: 10px;
     border-radius: 10px;
-}
-
-.landing-container {
-    background-color: #3b3b3b;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 90%;
-    border-radius: 10px;
-    padding: 20px;
 }
 
 .quiz-card {
@@ -140,22 +133,11 @@ button.take-quiz:hover {
 
 /* ====== Quiz Page Styles ====== */
 
-.quiz-page-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 95%;
-    background-color: #3b3b3b;
-    border-radius: 10px;
-    padding: 20px;
-}
 
 .quiz-container {
     width: 85%;
-    height: 70%;
-    max-width: 400px;
-    max-height: 500px;
+    height: 450px;
+    max-width: 350px;
     display: flex;
     flex-direction: column; /* Changed to column */
     text-align: center;
@@ -165,7 +147,7 @@ button.take-quiz:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
     justify-content: space-between; /* Distribute space between elements */
     padding: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
 }
 
 .quiz-container h1 {
@@ -288,22 +270,22 @@ button#next:hover, button#score:hover {
 /* ====== Mobile Responsiveness ====== */
 
 @media (min-width: 800px) {
-    .landing-container {
-        width: 80%; /* Increased max-width for larger screens */
-        height: 95%;
+
+    html {
+        background-color: #e7e7e7;
     }
 
-    .quiz-page-container {
-        width: 80%;
-        height: 95%;
+    body {
+        max-width: 1100px;
+    }
+
+    .quiz-carousel-container {
+        width: 900px;
     }
 
 }
 
 @media (max-width: 600px) {
-    .html .body {
-        background: #3b3b3b;
-    }
     
     .quiz-carousel {
         gap: 15px; /* Ensures consistent gap between cards */
@@ -314,30 +296,4 @@ button#next:hover, button#score:hover {
         padding: 0 10px; /* Adds padding to avoid the first card being too close to the edge */
     }
 
-    .landing-container {
-        width: 95%; /* Gives more space on smaller screens */
-        height: 95%;
-    }
-
-    .quiz-page-container {
-        width: 95%;
-        height: 95%;
-    }
-}
-
-@media (min-width: 600px) and (max-width: 800px) {
-
-    .landing-container {
-        width: 90%;
-        height: 90%;
-    }
-
-    .quiz-carousel {
-        gap: 10px; /* Adjusts the gap for medium screens */
-    }
-
-    .quiz-page-container {
-        height: 95%;
-        width: 95%;
-    }
 }
