@@ -27,7 +27,6 @@ html, body {
 #logo {
     aspect-ratio: auto;
     height: 150px;
-    margin-bottom: 10px;
     border-radius: 10px;
 }
 
@@ -116,8 +115,8 @@ button.take-quiz:hover {
 .quiz-carousel-container {
     width: 100%;
     display: flex;
-    justify-content: center; /* Centers the whole carousel on the page */
-    padding: 0 10px; /* Added padding to prevent the first card from being too close to the edges */
+    justify-content: center;
+    padding: 10px;
 }
 
 .quiz-carousel {
@@ -292,8 +291,6 @@ button#next:hover, button#score:hover {
     }
 
     .quiz-carousel-container {
-        justify-content: flex-start; /* Keeps the first card centered */
-        padding: 0 10px; /* Adds padding to avoid the first card being too close to the edge */
-    }
+        justify-content: flex-start; /* Keeps the first card centered */    }
 
 }
