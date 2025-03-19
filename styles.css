@@ -256,6 +256,18 @@ button#next, button#score {
     display: none; /* Ensure next and score buttons are hidden initially */
 }
 
+button#try-again {
+    width: 125px;
+    margin-top: 25px;
+    background-color: #4CAF50;
+    font-size: 1.2rem;
+    display: none; /* Hidden by default */
+}
+
+button#try-again:hover {
+    background-color: #6e6e6e;
+}
+
 button#next:hover, button#score:hover {
     background-color: #6e6e6e;
 }
