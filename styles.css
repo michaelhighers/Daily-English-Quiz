@@ -149,10 +149,19 @@ button.take-quiz:hover {
     margin-bottom: 20px;
 }
 
+.card-image {
+    margin-top: 20px;
+}
+
 .quiz-container h1 {
     margin: auto;
     font-size: 1.5rem;
     color: #3b3b3b;
+}
+
+.quiz-container h2 {
+    color: #3b3b3b;
+    margin-top: 10px;
 }
 
 .quiz-container p {
@@ -224,6 +233,7 @@ button.answer.incorrect {
     padding: 0;
 }
 
+
 /* ====== Button Styles ====== */
 button#start {
     height: 80px;
@@ -231,7 +241,6 @@ button#start {
     background-color: #4CAF50;
     font-size: 1.75rem;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-    margin-top: 100%;
     align-self: center; /* Keeps it centered horizontally */
 }
 
