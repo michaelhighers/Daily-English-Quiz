@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const scoreButton = document.getElementById('score');
     const scoreContainer = document.getElementById('score-container');  
     const scoreResult = document.getElementById('score-result');
-    const shareButton = document.getElementById('share');
+    const tryagainButton = document.getElementById('try-again');
     const questions = document.querySelectorAll('.question');
     let currentQuestion = 0;
     let score = 0;
@@ -98,10 +98,13 @@ document.addEventListener('DOMContentLoaded', function () {
         // Show the score container
         scoreResult.textContent = `You scored ${score} out of ${questions.length}!`;
         scoreContainer.style.display = 'block';
+        tryagainButton.style.display = 'block';
         scoreButton.style.display = 'none';
     }
 
-
+    tryagainButton.addEventListener('click', function () {
+        window.location.reload(); // Refresh the page
+    });
 
     // Add event listener to the score button to display the score
     scoreButton.addEventListener('click', function () {
