@@ -23,9 +23,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // Hide all questions initially
     questions.forEach(question => question.style.display = 'none');
     
-    // When the start button is clicked, start the quiz
-    startButton.addEventListener('click', function () {
+     // When the start button is clicked, start the quiz
+     startButton.addEventListener('click', function () {
         startButton.style.display = 'none'; // Hide the start button
+        document.querySelector('.quiz-start-image').style.display = 'none'; // Hide the image
+        document.querySelector('.quiz-title').style.display = 'none'; // Hide the title
         showQuestion(currentQuestion); // Show the first question
     });
 
