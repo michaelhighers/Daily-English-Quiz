@@ -144,7 +144,6 @@ button.take-quiz:hover {
 
 .quiz-container {
     width: 85%;
-    height: 450px;
     max-width: 350px;
     display: flex;
     flex-direction: column;
@@ -156,7 +155,10 @@ button.take-quiz:hover {
     justify-content: space-between;
     padding: 5px;
     margin-bottom: 20px;
+    flex-grow: 1;
+    overflow-y: auto;
 }
+
 
 .card-image {
     margin-top: 20px;
@@ -176,6 +178,12 @@ button.take-quiz:hover {
 .quiz-container p {
     font-size: 1rem;
     color: #3b3b3b;
+}
+
+.question-container { /* Place the question-container styles here */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 /* ====== Quiz Q&A and Button Styles ====== */
@@ -200,8 +208,6 @@ button.take-quiz:hover {
 .answer-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100%; /* Take full width */
 }
 
 
@@ -250,7 +256,8 @@ button#start {
     background-color: #4CAF50;
     font-size: 1.75rem;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-    align-self: center; /* Keeps it centered horizontally */
+    align-self: center;
+    margin-bottom: 40px;
 }
 
 button#start:hover {
@@ -268,6 +275,7 @@ button#next, button#score {
 button#try-again {
     width: 125px;
     margin-top: 25px;
+    margin-bottom: 100px;
     background-color: #4CAF50;
     font-size: 1.2rem;
     display: none; /* Hidden by default */
@@ -289,11 +297,26 @@ button#next:hover, button#score:hover {
     margin-bottom: 25px;
 }
 
-#share {
-    width: 175px;
-    height: 80px;
+.navigation-container {
+    display: flex;
+    justify-content: center;
+    margin-top: auto; /* CHANGED THIS LINE */
+    margin-bottom: 20px;
 }
 
+.navigation-container button {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    background-color: #e7e7e7;
+    margin-left: 5px;
+    margin-right: 5px;
+    box-shadow: none;
+}
+
+.navigation-container button:hover {
+    transform: scale(1.2);
+}
 
 
 /* ====== Mobile Responsiveness ====== */
