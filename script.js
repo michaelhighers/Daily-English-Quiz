@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //Date range (replace with your actual dates)
     const firstQuizDate = '20250311'; //Oldest date
-    const lastQuizDate = '20250316'; //newest date.
+    const lastQuizDate = '20250320'; //newest date.
 
     // Function to generate quiz URL from date
     function getQuizUrl(date) {
